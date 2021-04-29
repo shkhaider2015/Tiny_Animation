@@ -11,6 +11,8 @@ import frame3 from "./static/images/frame3.png";
 import frame4 from "./static/images/frame4.png";
 import './App.css';
 import { LandingComp } from './Components/LandingComp';
+import { useCallback } from "react";
+import { useSpring } from 'react-spring'
 
 const data = [
   {
@@ -41,10 +43,14 @@ const data = [
 
 
 function App() {
-  return <div>
+
+  const [{ scroll }, set] = useSpring(() => ({ scroll: 0 }))
+  const onScroll = useCallback(e => void set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }), [])
+
+  return <div onScroll={onScroll} >
       {
         data.map(
-          (obj, ind) => <LandingComp TEXT={obj.text} IMAGE={obj.image} BCIMAGE={obj.bcImage} INDEX={ind+1} key={ind} />
+          (obj, ind) => <LandingComp offset={scroll} TEXT={obj.text} IMAGE={obj.image} BCIMAGE={obj.bcImage} INDEX={ind+1} key={ind} />
         )
       }
   </div>
