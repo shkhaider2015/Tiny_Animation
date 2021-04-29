@@ -45,8 +45,9 @@ const data = [
 function App() {
 
   const [{ scroll }, set] = useSpring(() => ({ scroll: 0 }))
-  const onScroll = useCallback(e => void set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }), [])
+  const onScroll = useCallback(e => set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }), [])
 
+  console.log("OnScroll : ", scroll)
   return <div onScroll={onScroll} >
       {
         data.map(
