@@ -1,12 +1,22 @@
-import React, {useState} from 'react'
-import { animated } from 'react-spring'
+import React, {useState, useContext, useMemo, useEffect} from 'react'
+import { animated, useSpring } from 'react-spring'
+import { ScrollPosition } from "../ContextAPI";
+import useWindowsPosition from "./GetPosition";
 
-export const LandingComp = ({ offset, TEXT, IMAGE, BCIMAGE, INDEX }) => {
+const LandingComp = ({ OBJ, INDEX, effect}) => {
 
-    const [opacity] = useState(() => offset.interpolate([1, 2], [0, 1]))
+    const kk = useWindowsPosition();
+
+    const springProps = useSpring({
+        opacity: 1,
+        config: { duration : 3000 },
+        from: {
+            opacity: 0
+        }
+    })
 
     const stylee = {
-        backgroundImage: `url(${BCIMAGE})`,
+        backgroundImage: `url(${OBJ.bcImage})`,
         backgroundPosition: 'center', /* Center the image */
         backgroundRepeat: 'no-repeat', /* Do not repeat the image */
         backgroundSize: 'cover', /* Resize the background image to cover the entire container */
@@ -16,30 +26,33 @@ export const LandingComp = ({ offset, TEXT, IMAGE, BCIMAGE, INDEX }) => {
         alignContent: 'center'
     }
 
+
     if (INDEX % 2 !== 0) {
-        return <animated.div style={stylee} >
+        return <div style={stylee} >
 
-
-            <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                width: '100%',
-                justifyContent: 'center',
-                alignItems: 'center'
-            }} >
-                {/* <div style={{ width , border : '1px solid white' }} >
-            <div style={{  border : '1px solid white' }} > {TEXT} </div>
-        </div> */}
-                {/* <div style={{ opacity, border : '1px solid white' }} > */}
-                    <span style={{ width: '30%', textAlign: 'center', fontSize: 12, fontWeight: 'bold', color: 'whitesmoke', opacity }} > {TEXT} </span>
-                    <div >
-                        <img style={{ width: '100%' }} src={IMAGE} alt="jkjk" />
+                
+                
+                 <div style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        width: '100%',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }} >
+                        {/* <div style={{ width , border : '1px solid white' }} >
+                    <div style={{  border : '1px solid white' }} > {TEXT} </div>
+                </div> */}
+                        {/* <div style={{ opacity, border : '1px solid white' }} > */}
+                            <span style={{ width: '30%', textAlign: 'center', fontSize: 12, fontWeight: 'bold', color: 'whitesmoke' }} > {OBJ.text} </span>
+                            <animated.div style={ springProps } >
+                                <img style={{ width: '100%' }} src={OBJ.image} alt="jkjk" />
+                            </animated.div>
+                        {/* </div> */}
+        
                     </div>
-                {/* </div> */}
+                    
 
-            </div>
-
-        </animated.div>
+        </div>
     }
     else {
         return <div style={stylee} >
@@ -55,13 +68,15 @@ export const LandingComp = ({ offset, TEXT, IMAGE, BCIMAGE, INDEX }) => {
                 {/* <div style={{ width , border : '1px solid white' }} >
             <div style={{  border : '1px solid white' }} > {TEXT} </div>
         </div> */}
-                <div style={{}} >
-                    <img style={{ width: '100%' }} src={IMAGE} alt="jkjk" />
-                </div>
-                <span style={{ width: '30%', textAlign: 'center', fontSize: 12, fontWeight: 'bold', color: 'whitesmoke' }} > {TEXT} </span>
+                <animated.div style={ springProps } >
+                    <img style={{ width: '100%' }} src={OBJ.image} alt="jkjk" />
+                </animated.div>
+                <span style={{ width: '30%', textAlign: 'center', fontSize: 12, fontWeight: 'bold', color: 'whitesmoke' }} > {OBJ.text} </span>
 
             </div>
 
         </div>
     }
 }
+
+export default  LandingComp
