@@ -3,13 +3,20 @@ import { animated, useSpring } from 'react-spring'
 import { ScrollPosition } from "../ContextAPI";
 import useWindowsPosition from "./GetPosition";
 
-const LandingComp = ({ OBJ, INDEX, effect}) => {
+const LandingComp = ({ OBJ, INDEX}) => {
 
     const kk = useWindowsPosition();
 
     const springProps = useSpring({
         opacity: 1,
-        config: { duration : 3000 },
+        config: { duration : 2000 },
+        from: {
+            opacity: 0
+        }
+    })
+    const springText = useSpring({
+        opacity: 1,
+        config: { duration : 2000 },
         from: {
             opacity: 0
         }
@@ -43,7 +50,11 @@ const LandingComp = ({ OBJ, INDEX, effect}) => {
                     <div style={{  border : '1px solid white' }} > {TEXT} </div>
                 </div> */}
                         {/* <div style={{ opacity, border : '1px solid white' }} > */}
-                            <span style={{ width: '30%', textAlign: 'center', fontSize: 12, fontWeight: 'bold', color: 'whitesmoke' }} > {OBJ.text} </span>
+                            <span style={{ width: '30%', textAlign: 'center', fontSize: 12, fontWeight: 'bold', color: 'whitesmoke' }} > 
+                                <animated.span style={ springText }>
+                                {OBJ.text} 
+                                </animated.span>
+                             </span>
                             <animated.div style={ springProps } >
                                 <img style={{ width: '100%' }} src={OBJ.image} alt="jkjk" />
                             </animated.div>
