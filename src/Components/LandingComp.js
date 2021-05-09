@@ -2,7 +2,7 @@ import React  from 'react'
 import { animated, useSpring } from 'react-spring'
 
 const LandingComp = ({ OBJ, INDEX }) => {
-
+// This component is represanting complete virtual heights
 
     const springProps = useSpring({
         opacity: 1,
