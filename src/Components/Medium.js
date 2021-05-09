@@ -1,6 +1,5 @@
-import React,{ useContext, useEffect } from 'react'
+import React from 'react'
 import  LandingComp  from './LandingComp';
-import { ScrollPosition } from "../ContextAPI";
 
 import doctorImage1 from "../static/images/doctor1.png"
 import doctorImage2 from "../static/images/doctor2.png"
@@ -13,7 +12,6 @@ import frame3 from "../static/images/frame3.png";
 import frame4 from "../static/images/frame4.png";
 
 import useWindowsPosition from "./GetPosition";
-import { useSpring } from '@react-spring/core';
 
 
 const data = [

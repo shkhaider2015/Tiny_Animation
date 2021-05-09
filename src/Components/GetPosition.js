@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 export default function useWindowPosition() {
     const [scrollPosition, setPosition] = useState(0);
