@@ -19,26 +19,26 @@ const data = [
       text : `Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
       Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without special treatment.`,
       image: doctorImage2,
-      bcImage : blueBC,
+      bcImage : 'linear-gradient(200deg, #0284db , #a7c6db)',
     },
     {
       text : `The virus that causes COVID-19 is mainly transmitted through droplets generated when an infected person coughs, sneezes, or exhales. These droplets are too heavy to hang in the air, and quickly fall on floors or surfaces.
       You can be infected by breathing in the virus if you are within close proximity of someone who has COVID-19, or by touching a contaminated surface and then your eyes, nose or mouth.`,
       image: doctorImage1,
-      bcImage : frame2,
+      bcImage : 'linear-gradient(200deg, #d60288, #dba9c9)',
     },
     {
       text : `Among those who develop symptoms, most (about 80%) recover from the disease without needing hospital treatment. About 15% become seriously ill and require oxygen and 5% become critically ill and need intensive care.
       Complications leading to death may include respiratory failure, acute respiratory distress syndrome (ARDS), sepsis and septic shock, thromboembolism, and/or multiorgan failure, including injury of the heart, liver or kidneys.
       In rare situations, children can develop a severe inflammatory syndrome a few weeks after infection. `,
       image: doctorImage3,
-      bcImage: frame3,
+      bcImage: 'linear-gradient(200deg, #8502d6 , #a2b4bd)',
     },
     {
       text : `People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer, are at higher risk of developing serious illness. 
       However, anyone can get sick with COVID-19 and become seriously ill or die at any age.`,
       image: doctorImage4,
-      bcImage: frame4,
+      bcImage: 'linear-gradient(200deg, #02c9ac , #9fd6ce)',
     },
   ]
 

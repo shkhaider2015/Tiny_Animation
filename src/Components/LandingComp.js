@@ -22,10 +22,10 @@ const LandingComp = ({ OBJ, INDEX }) => {
     })
 
     const stylee = {
-        backgroundImage: `url(${OBJ.bcImage})`,
-        backgroundPosition: 'center', /* Center the image */
-        backgroundRepeat: 'no-repeat', /* Do not repeat the image */
-        backgroundSize: 'cover', /* Resize the background image to cover the entire container */
+        backgroundImage: OBJ.bcImage,
+        // backgroundPosition: 'center', /* Center the image */
+        // backgroundRepeat: 'no-repeat', /* Do not repeat the image */
+        // backgroundSize: 'cover', /* Resize the background image to cover the entire container */
         height: '100vh',
         display: 'grid',
         justifyContent: 'center',
