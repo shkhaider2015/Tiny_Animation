@@ -6,10 +6,10 @@ import doctorImage2 from "../static/images/doctor2.png"
 import doctorImage3 from "../static/images/doctor3.png";
 import doctorImage4 from "../static/images/doctor4.png";
 
-import blueBC from "../static/images/blueToPurple.jpg";
-import frame2 from "../static/images/frame2.png";
-import frame3 from "../static/images/frame3.png";
-import frame4 from "../static/images/frame4.png";
+// import blueBC from "../static/images/blueToPurple.jpg";
+// import frame2 from "../static/images/frame2.png";
+// import frame3 from "../static/images/frame3.png";
+// import frame4 from "../static/images/frame4.png";
 
 import useWindowsPosition from "./GetPosition";
 
