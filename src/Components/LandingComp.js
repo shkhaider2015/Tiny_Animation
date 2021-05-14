@@ -51,7 +51,7 @@ const LandingComp = ({ OBJ, INDEX }) => {
                 {/* <div style={{ opacity, border : '1px solid white' }} > */}
                 <span style={{ width: '20%', textAlign: 'center', fontSize: 12, fontWeight: 'bold', color: 'whitesmoke' }} >
                     <animated.span style={springText}>
-                        {OBJ.text} <spa>jj</spa>
+                        {OBJ.text}
                     </animated.span>
                 </span>
                 <animated.div style={springProps} >
